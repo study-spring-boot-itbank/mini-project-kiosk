@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- remember? mybatipse 도구 나는 resources 아래 mapper폴더 아래 mybatismapper.xml 
+	파일 이라는 -->
+
+<mapper namespace="com.mini.pro.dao.MiniPDAO">
+
+	<select id="finduser" resultType="loginVO" parameterType="String"> 
+		select id as id, id as username, pw as password,user_role as role
+		from minilogin 
+		where id = #{id}
+	</select>
+
+	<insert id="joinHaja" parameterType="String">
+	
+								<!-- vo의 객체의 id와 password ... joinHaja가서 확인하기 -->
+		insert into minilogin (id,pw) values (#{id},#{password})
+	</insert>
+	
+
+</mapper>

@@ -1,0 +1,20 @@
+drop table minilogin;
+Create table minilogin ( 
+    id VARCHAR2(100 byte) CONSTRAINT minilogin_id_pk PRIMARY KEY,
+    pw VARCHAR2(100 byte) CONSTRAINT minilogin_pw_nn not null,
+    user_role VARCHAR2(50)  default 'ROLE_USER'
+);
+
+drop table minimenu;
+Create table minimenu ( 
+    menu VARCHAR2(100 byte), 
+    img VARCHAR2(100 byte), 
+    price VARCHAR2(50)  
+);
+
+drop table minifin;
+Create table minifin (
+    id  VARCHAR2(100 byte) CONSTRAINT minilogin_id_fk references minilogin(id),
+    menu VARCHAR2(100 byte), 
+    price VARCHAR2(50)  
+);
