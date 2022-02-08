@@ -294,12 +294,13 @@
 				<div class="right_con">
 					<div class="right_list">
 						<div class="right_in">
-								<c:forEach var="cart" items="${cartList }">
+						<%-- 		<c:forEach var="cart" items="${cartList }">
 									${cart.menu }
 									${cart.img }
 									${cart.price }
 									<br>
-								</c:forEach>
+								</c:forEach> --%>
+								${cartList[0].menu }
 						</div>
 					</div>
 
