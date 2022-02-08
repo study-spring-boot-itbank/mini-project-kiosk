@@ -71,7 +71,7 @@
 							<div class="list_menu">
 								<ul>
 									<li id="btn">
-									<form name="s1" action="addCart" id="frm">
+									<form name="s1" action="addCart" method="post">
 										<div class="list_wrap" >
 											<div class="img"><img src="${menuList[0].img}"></div>
 											<div class="text" >
@@ -294,7 +294,7 @@
 				<div class="right_con">
 					<div class="right_list">
 						<div class="right_in">
-					<c:forEach var="cart" items="${cartList }">
+								<c:forEach var="cart" items="${cartList }">
 									${cart.menu }
 									${cart.img }
 									${cart.price }
