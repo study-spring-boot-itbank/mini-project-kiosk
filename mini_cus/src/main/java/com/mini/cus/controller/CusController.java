@@ -43,20 +43,18 @@ public class CusController {
 	@GetMapping("/addCart")
 	public String addCart(CartVO cvo,Model model) {
 		int num = minidao.addCart(cvo.getMenu(),cvo.getImg(),cvo.getPrice());
-
 		System.out.println(num);
-		return "redirect:showCart";
-	}
-
-	@ResponseBody
-	@RequestMapping("/showCart")
-	public String getC(Model model) {
-		List<CartVO> cvo = minidao.getAllCart();
+		minidao.getAllCart();
 		model.addAttribute("cartList", cvo);
 		return "redirect:index";
 	}
-			
-		
+
+	/*
+	 * @RequestMapping("/showCart") public String getC(Model model) {
+	 * 
+	 * return "redirect:index"; }
+	 * 
+	 */
 	
 	
 	/*

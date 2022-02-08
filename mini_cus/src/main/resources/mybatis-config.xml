@@ -4,7 +4,7 @@
 	<typeAliases>
 		<!-- <typeAlias alias="LoginVO" type="com.mini.pro.vo.LoginVO"/> -->
 		<typeAlias alias="MenuVO" type="com.mini.cus.vo.MenuVO"/>
-	<typeAlias alias="CartVO" type="com.mini.cus.vo.CartVO"/>
+		<typeAlias alias="CartVO" type="com.mini.cus.vo.CartVO"/>
 	</typeAliases>
 	
 </configuration>

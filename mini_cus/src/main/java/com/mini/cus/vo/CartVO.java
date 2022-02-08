@@ -8,5 +8,4 @@ public class CartVO {
 	private String img;
 	private String price;
 	
-
 }
