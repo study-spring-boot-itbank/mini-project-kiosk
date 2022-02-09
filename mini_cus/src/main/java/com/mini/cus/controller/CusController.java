@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -37,15 +38,16 @@ public class CusController {
 	public String getM(Model model) {
 		List<MenuVO> mvo = minidao.getAllMenu();
 		model.addAttribute("menuList", mvo);
+		List<CartVO> lcvo = minidao.getAllCart();
+		model.addAttribute("cartList", lcvo);
 		return "index";
 	}
 	
-	@GetMapping("/addCart")
+	@RequestMapping(value = "/addCart" , method = RequestMethod.POST)
 	public String addCart(CartVO cvo,Model model) {
 		int num = minidao.addCart(cvo.getMenu(),cvo.getImg(),cvo.getPrice());
-		System.out.println(num);
-		minidao.getAllCart();
-		model.addAttribute("cartList", cvo);
+//		List<CartVO> lcvo = minidao.getAllCart();
+//		model.addAttribute("cartList", lcvo);
 		return "redirect:index";
 	}
 
