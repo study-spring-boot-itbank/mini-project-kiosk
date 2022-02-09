@@ -1,8 +1,10 @@
 package com.mini.pro.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -67,7 +69,15 @@ public class ProController {
 	}
 	
 	@RequestMapping("/toResult")
-	public String loginKajaMain() {
+	public String loginKajaMain(HttpSession session,Authentication authentication) {
+		session.setAttribute("pid", "테스트");
+		String pid2 = null;
+		if (authentication != null)
+            pid2 = authentication.getName();
+        else
+            pid2 = "실패";
+		session.setAttribute("pid2", pid2);
+		//session.getAttribute("pid");
 		return "result";
 	}
 	

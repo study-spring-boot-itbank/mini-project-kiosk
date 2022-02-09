@@ -103,8 +103,77 @@
 	else if (document.getElementById)
 		window.onload = do_onload
 </script>
+<script type="text/javascript">
+	var enablepersistence = true
+	var persisttype = "local"
+
+	function get_cookie(Name) {
+		var search = Name + "="
+		var returnvalue = "";
+		if (document.cookie.length > 0) {
+			offset = document.cookie.indexOf(search)
+			if (offset != -1) {
+				offset += search.length
+				end = document.cookie.indexOf(";", offset);
+				if (end == -1)
+					end = document.cookie.length;
+				returnvalue = unescape(document.cookie.substring(offset, end))
+			}
+		}
+		return returnvalue;
+	}
+
+	function savetabstate() {
+		var cookiename = (persisttype == "sitewide") ? "tabcontent"
+				: window.location.pathname
+		var cookievalue = (persisttype == "sitewide") ? tabsourceindex + "|"
+				+ previoustab + ";path=/" : tabsourceindex + "|" + previoustab
+		document.cookie = cookiename + "=" + cookievalue
+	}
+	window.onunload = savetabstate
+</script>
+<script type="text/javascript">
+
+const receiveMessage = async (e) =>
+{
+  if(e.data.hasOwnProperty('code')){
+   	console.log(e)   
+  }
+  if(e.origin === 'http://localhost:8911'){
+	  sessionStorage.setItem("code2", e.data.code);
+	  var a = sessionStorage.getItem("code2");
+	  console.log(e);
+	  location.href="sss/"+a;
+  }
+}
+
+
+	window.addEventListener("message", receiveMessage, false);
+
+	
+
+</script>
+<script type="text/javascript">
+	function paypay() {
+		<% String id = (String)session.getAttribute("code2");
+			if (id==null){ %>
+			window.open('http://localhost:8911/login','','width =300 , height = 300, top = 100, left = 1000, location = no')
+		<% }else{ %>
+			/* 이곳에 결제버튼을 구현 현재는 로그아웃으로 설정*/
+			/* pro 도 feignlcient 가 되어야할듯 id와 장바구니 내역을 모두보냄
+			pro 에서 결제 진행 + cus를 초기화 시키는 값을 return? */
+			location.href="logout";
+		<% } %>
+	}
+</script>
+<script type="text/javascript">
+	function delall() {
+		location.href="delall";
+	}
+</script>
 
 <body>
+	<div>이것은 팝업창에서 받아온 로그인한 아이디 ${code2} 이다</div>
 	<div class="login_pop">
 		<div class="login_in">
 			<h2>키오스크</h2>
@@ -431,11 +500,11 @@
 
 				<div class="right_btn">
 					<div class="btn_in">
-						<div class="no_btn btn">
+						<div class="no_btn btn" onclick="delall()">
 							<h3>결제취소</h3>
 						</div>
 
-						<div class="ok_btn btn">
+						<div class="ok_btn btn" onclick="paypay()">
 							<h3>결제하기</h3>
 						</div>
 					</div>
@@ -447,32 +516,3 @@
 </body>
 </html>
 
-<script type="text/javascript">
-	var enablepersistence = true
-	var persisttype = "local"
-
-	function get_cookie(Name) {
-		var search = Name + "="
-		var returnvalue = "";
-		if (document.cookie.length > 0) {
-			offset = document.cookie.indexOf(search)
-			if (offset != -1) {
-				offset += search.length
-				end = document.cookie.indexOf(";", offset);
-				if (end == -1)
-					end = document.cookie.length;
-				returnvalue = unescape(document.cookie.substring(offset, end))
-			}
-		}
-		return returnvalue;
-	}
-
-	function savetabstate() {
-		var cookiename = (persisttype == "sitewide") ? "tabcontent"
-				: window.location.pathname
-		var cookievalue = (persisttype == "sitewide") ? tabsourceindex + "|"
-				+ previoustab + ";path=/" : tabsourceindex + "|" + previoustab
-		document.cookie = cookiename + "=" + cookievalue
-	}
-	window.onunload = savetabstate
-</script>

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,6 +56,25 @@ public class CusController {
 	public String delCart(CartVO cvo,Model model) {
 		String menu = cvo.getMenu();
 		minidao.delCart(menu);
+		return "redirect:index";
+	}
+	
+	@GetMapping("sss/{id}")
+	public String sss(@PathVariable("id") String id, HttpSession session) {
+		session.setAttribute("code2", id);
+		System.out.println(id);
+		return "redirect:/";
+	}
+	
+	@GetMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:index";
+	}
+	
+	@GetMapping("delall")
+	public String delall() {
+		minidao.delall();
 		return "redirect:index";
 	}
 

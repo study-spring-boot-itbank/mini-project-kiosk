@@ -24,11 +24,17 @@
 			select menu,img,price,COUNT(menu)as count
 			from cart
 			GROUP BY menu,img,price
+			order by 1
 	</select>
 	<delete id="delCart">
 		delete
 		from cart
 		where menu = #{menu}
 		and rownum =1
+	</delete>
+	
+	<delete id="delall">
+		delete
+		from cart
 	</delete>
 </mapper>

@@ -8,7 +8,15 @@
 </head>
 <body>
 
-<a href="http://localhost:8912">이동</a>
-
+<script type="text/javascript">
+		/* 	function close7() {
+				   self.opener=self;
+				   window.close();
+				} */
+			window.parent.postMessage({ code : ${pid2} },"*");
+           // window.opener.postMessage({ code : ${pid2} },"*");
+			window.self.close();
+</script>
+${pid2} 가 언 디 파 인 드 라 고?
 </body>
 </html>
