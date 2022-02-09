@@ -306,7 +306,7 @@
 									
 									<div class="cart_btn">
 										<input type="button" value="-" name="">
-										<span><%-- ${ 수량 코드 넣어주세요 } --%></span>
+										<span>${cart.count}</span>
 										<input type="button" value="+" name="">
 									</div>
 								</div>

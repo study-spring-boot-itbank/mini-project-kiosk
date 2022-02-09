@@ -7,5 +7,6 @@ public class CartVO {
 	private String menu;
 	private String img;
 	private String price;
+	private String count;
 	
 }

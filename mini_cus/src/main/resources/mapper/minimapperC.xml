@@ -21,6 +21,8 @@
 	</insert>
 	<!-- 장바구니 보여주기 -->
 		<select id="getAllCart" resultType="CartVO">
-		SELECT * FROM cart 
+			select menu,img,price,COUNT(menu)as count
+			from cart
+			GROUP BY menu,img,price
 	</select>
 </mapper>
