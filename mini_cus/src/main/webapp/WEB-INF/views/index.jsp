@@ -21,6 +21,89 @@
 <script src="fontawesome/js/all.js"></script>
 <script src="js/index.js"></script>
 </head>
+
+<script type="text/javascript">
+	var initialtab = [ 1, "sc1" ]
+
+	function cascadedstyle(el, cssproperty, csspropertyNS) {
+		if (el.currentStyle)
+			return el.currentStyle[cssproperty]
+		else if (window.getComputedStyle) {
+			var elstyle = window.getComputedStyle(el, "")
+			return elstyle.getPropertyValue(csspropertyNS)
+		}
+	}
+
+	var previoustab = ""
+
+	function expandcontent(cid, aobject) {
+		if (document.getElementById) {
+			highlighttab(aobject)
+			detectSourceindex(aobject)
+			if (previoustab != "")
+				document.getElementById(previoustab).style.display = "none"
+			document.getElementById(cid).style.display = "block"
+			previoustab = cid
+			if (aobject.blur)
+				aobject.blur()
+			return false
+		} else
+			return true
+	}
+
+	function highlighttab(aobject) {
+		if (typeof tabobjlinks == "undefined")
+			collecttablinks()
+		for (i = 0; i < tabobjlinks.length; i++)
+			tabobjlinks[i].style.backgroundColor = initTabcolor
+		var themecolor = aobject.getAttribute("theme") ? aobject
+				.getAttribute("theme") : initTabpostcolor
+		aobject.style.backgroundColor = document
+				.getElementById("tabcontentcontainer").style.backgroundColor = themecolor
+	}
+
+	function collecttablinks() {
+		var tabobj = document.getElementById("tablist")
+		tabobjlinks = tabobj.getElementsByTagName("A")
+	}
+
+	function detectSourceindex(aobject) {
+		for (i = 0; i < tabobjlinks.length; i++) {
+			if (aobject == tabobjlinks[i]) {
+				tabsourceindex = i //source index of tab bar relative to other tabs
+				break
+			}
+		}
+	}
+
+	function do_onload() {
+		var cookiename = (persisttype == "sitewide") ? "tabcontent"
+				: window.location.pathname
+		var cookiecheck = window.get_cookie
+				&& get_cookie(cookiename).indexOf("|") != -1
+		collecttablinks()
+		initTabcolor = cascadedstyle(tabobjlinks[1], "backgroundColor",
+				"background-color")
+		initTabpostcolor = cascadedstyle(tabobjlinks[0], "backgroundColor",
+				"background-color")
+		if (typeof enablepersistence != "undefined" && enablepersistence
+				&& cookiecheck) {
+			var cookieparse = get_cookie(cookiename).split("|")
+			var whichtab = cookieparse[0]
+			var tabcontentid = cookieparse[1]
+			expandcontent(tabcontentid, tabobjlinks[whichtab])
+		} else
+			expandcontent(initialtab[1], tabobjlinks[initialtab[0] - 1])
+	}
+
+	if (window.addEventListener)
+		window.addEventListener("load", do_onload, false)
+	else if (window.attachEvent)
+		window.attachEvent("onload", do_onload)
+	else if (document.getElementById)
+		window.onload = do_onload
+</script>
+
 <body>
 	<div class="login_pop">
 		<div class="login_in">
@@ -55,23 +138,24 @@
 			<section class="left">
 
 				<div class="left_tap">
-					<ul>
-						<li class="on">메뉴1</li>
-						<li>메뉴2</li>
-						<li>메뉴3</li>
-						<li>메뉴4</li>
+					<ul id="tablist">
+						<li><a href="#" class="current" onClick="return expandcontent('sc1', this)">메뉴 1</a></li>
+						<li><a href="#" onClick="return expandcontent('sc2', this)" >메뉴 2</a></li>
+						<li><a href="#" onClick="return expandcontent('sc3', this)" >메뉴 3</a></li>
+						<li><a href="#" onClick="return expandcontent('sc4', this)" >메뉴 4</a></li>
 					</ul>
 				</div>
 
-				<div class="left_con">
-					<div class="left_list">
+				<div class="left_con" id="tabcontentcontainer">
+					<div class="left_list tabcontent" id="sc1">
 						<div class="list_in">
 							<div class="list_menu">
 								<ul>
-									<li id="btn">
+									<li>
 										<form name="s1" action="addCart" method="post">
 											<div class="list_wrap">
-												<div class="img" style="background: url(img/${menuList[0].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="img"
+													style="background: url(img/${menuList[0].img}.jpg)no-repeat 50% 50%;"></div>
 												<div class="text">
 													<input readonly type="text" value="${menuList[0].menu}"
 														name="menu" class="ippp"> <input readonly
@@ -80,7 +164,7 @@
 														value="${menuList[0].price}" name="price" class="ippp">
 
 													<h2>${menuList[0].menu}</h2>
-													<p>${menuList[0].price}</p>
+													<p>${menuList[0].price}원</p>
 													<input type="submit" value="담기" class="subBtn">
 												</div>
 											</div>
@@ -171,18 +255,28 @@
 						</div>
 					</div>
 
-					<div class="left_list">
+					<div class="left_list tabcontent" id="sc2">
 						<div class="list_in">
 							<div class="list_menu">
 								<ul>
-									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[9].menu }</h2>
-												<p>${menuList[9].price}</p>
+									<li id="btn">
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[9].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[9].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[9].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[9].price}" name="price" class="ippp">
+
+													<h2>${menuList[9].menu}</h2>
+													<p>${menuList[9].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
 
 									<li>
@@ -269,11 +363,11 @@
 						</div>
 					</div>
 
-					<div class="left_list">
+					<div class="left_list tabcontent" id="sc3">
 						<div class="list_in">메뉴리스트3</div>
 					</div>
 
-					<div class="left_list">
+					<div class="left_list tabcontent" id="sc4">
 						<div class="list_in">메뉴리스트4</div>
 					</div>
 				</div>
@@ -292,27 +386,30 @@
 					<div class="right_list">
 						<div class="right_in">
 							<c:forEach var="cart" items="${cartList}">
-									
+
 								<div class="cart_list">
 									<div class="cart_img">
 										<img src="img/${cart.img}.jpg">
 									</div>
-									
+
 									<div class="cart_text">
 										<h3>${cart.menu}</h3>
-										<p>${cart.price}</p>
+										<p>${cart.price}원</p>
 									</div>
-									
+
 									<form class="cart_btn" method="post">
-										<input readonly type="hidden" value="${cart.menu}"name="menu">
-										<input readonly type="hidden" value="${cart.img}"name="img">
-										<input readonly type="hidden" value="${cart.price}"name="price">
-										<button type="submit" name="" onclick="javascript: form.action='/delCart'">-</button>
+										<input readonly type="hidden" value="${cart.menu}" name="menu">
+										<input readonly type="hidden" value="${cart.img}" name="img">
+										<input readonly type="hidden" value="${cart.price}"
+											name="price">
+										<button type="submit" name=""
+											onclick="javascript: form.action='/delCart'">-</button>
 										<span>${cart.count}</span>
-										<button type="submit" name="" onclick="javascript: form.action='/addCart'">+</button>
+										<button type="submit" name=""
+											onclick="javascript: form.action='/addCart'">+</button>
 									</form>
 								</div>
-								
+
 							</c:forEach>
 						</div>
 					</div>
@@ -321,14 +418,17 @@
 						<div class="right_in">채팅</div>
 					</div>
 				</div>
-				
+
 				<div class="money">
 					<div class="money_in">
-						<h3>합계금액 : </h3>
-						<p><%-- ${} --%> 원</p>
+						<h3>합계금액 :</h3>
+						<p>
+							<%-- ${} --%>
+							원
+						</p>
 					</div>
 				</div>
-				
+
 				<div class="right_btn">
 					<div class="btn_in">
 						<div class="no_btn btn">
@@ -344,6 +444,35 @@
 
 		</div>
 	</div>
-
 </body>
 </html>
+
+<script type="text/javascript">
+	var enablepersistence = true
+	var persisttype = "local"
+
+	function get_cookie(Name) {
+		var search = Name + "="
+		var returnvalue = "";
+		if (document.cookie.length > 0) {
+			offset = document.cookie.indexOf(search)
+			if (offset != -1) {
+				offset += search.length
+				end = document.cookie.indexOf(";", offset);
+				if (end == -1)
+					end = document.cookie.length;
+				returnvalue = unescape(document.cookie.substring(offset, end))
+			}
+		}
+		return returnvalue;
+	}
+
+	function savetabstate() {
+		var cookiename = (persisttype == "sitewide") ? "tabcontent"
+				: window.location.pathname
+		var cookievalue = (persisttype == "sitewide") ? tabsourceindex + "|"
+				+ previoustab + ";path=/" : tabsourceindex + "|" + previoustab
+		document.cookie = cookiename + "=" + cookievalue
+	}
+	window.onunload = savetabstate
+</script>
