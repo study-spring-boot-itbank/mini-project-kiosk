@@ -323,6 +323,14 @@
 						<div class="right_in">채팅</div>
 					</div>
 				</div>
+				
+				<div class="money">
+					<div class="money_in">
+						<h3>합계금액 : </h3>
+						<p><%-- ${} --%> 원</p>
+					</div>
+				</div>
+				
 				<div class="right_btn">
 					<div class="btn_in">
 						<div class="no_btn btn">

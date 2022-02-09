@@ -1,21 +1,21 @@
 *{box-sizing: border-box;}
-#wrap{border:1px solid red;width:100%;height:100vh;display: flex;flex-wrap: wrap;justify-items: center;align-items: center;justify-content: center;align-content: center;}
-#wrap .main{width:900px;height:800px;display: flex;}
-#wrap .main .left{border:1px solid red;width:70%;}
-#wrap .main .right{border:1px solid green;width:30%;}
+#wrap{width:100%;height:100vh;display: flex;flex-wrap: wrap;justify-items: center;align-items: center;justify-content: center;align-content: center;}
+#wrap .main{width:900px;height:800px;display: flex;border:1px solid rgba(0,0,0,.6);border-radius:5px;}
+#wrap .main .left{width:70%;border-right:1px solid rgba(0,0,0,.6);}
+#wrap .main .right{width:30%;}
 
 /* left - start */
-#wrap .main .left .left_tap{border:1px solid red;}
+#wrap .main .left .left_tap{border-bottom:1px solid rgba(0,0,0,.6);}
 #wrap .main .left .left_tap ul{display: flex;flex-wrap: wrap;justify-content: center;}
 #wrap .main .left .left_tap ul li{border:1px solid blue;cursor: pointer;padding:15px 30px;margin:5px 2.5px;}
 #wrap .main .left .left_tap ul li.on{background: #000;color:#fff;}
 
-#wrap .main .left .left_con{border:1px solid red;width:100%;height:calc(100% - 58px);}
-#wrap .main .left .left_con .left_list{border:1px solid blue;width:100%;height:100%;padding:5px;}
-#wrap .main .left .left_con .left_list .list_in{border:1px solid green;width:100%;height:100%;}
+#wrap .main .left .left_con{width:100%;height:calc(100% - 58px);}
+#wrap .main .left .left_con .left_list{width:100%;height:100%;padding:5px;}
+#wrap .main .left .left_con .left_list .list_in{width:100%;height:100%;}
 
-#wrap .main .left .left_con .left_list .list_in .list_menu{border:1px solid red;width:100%;height:100%;}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul{border:1px solid yellow;width:100%;height:100%;display: flex;flex-wrap: wrap;}
+#wrap .main .left .left_con .left_list .list_in .list_menu{width:100%;height:100%;}
+#wrap .main .left .left_con .left_list .list_in .list_menu ul{width:100%;height:100%;display: flex;flex-wrap: wrap;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li{border:1px solid #b9b9b9;width:30%;margin:1.5%;height:30%;border-radius: 15px;overflow: hidden;cursor: pointer;position: relative;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li form{width:100%;height:100%;display:block;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap{width:100%;height:100%;}
@@ -26,58 +26,19 @@
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .text p{font-size:14px;height:40%;line-height:16px;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li form .ippp{display:none;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li form .subBtn{position: absolute;left:0;top:0;width:100%;height:100%;opacity: 0;cursor: pointer;}
-
 /* left - end */
 
 /* right - start */
-#wrap .main .right .right_tap{border:1px solid red;}
+#wrap .main .right .right_tap{border-bottom:1px solid rgba(0,0,0,.6);}
 #wrap .main .right .right_tap ul{display: flex;flex-wrap: wrap;justify-content: center;}
 #wrap .main .right .right_tap ul li{border:1px solid blue;cursor: pointer;padding:15px 30px;margin:5px 2.5px;}
 #wrap .main .right .right_tap ul li.on{background: #000;color:#fff;}
 
-#wrap .main .right .right_con{border:1px solid red;width:100%;height:calc(100% - 58px);}
-#wrap .main .right .right_con .right_list{border:1px solid blue;width:100%;height:100%;padding:5px;}
-#wrap .main .right .right_con .right_list .right_in{border:1px solid green;width:100%;height:100%;}
-/* right - end */
-*{box-sizing: border-box;}
-#wrap{border:1px solid red;width:100%;height:100vh;display: flex;flex-wrap: wrap;justify-items: center;align-items: center;justify-content: center;align-content: center;}
-#wrap .main{width:900px;height:800px;display: flex;}
-#wrap .main .left{border:1px solid red;width:70%;}
-#wrap .main .right{border:1px solid green;width:30%;}
+#wrap .main .right .right_con{width:100%;height:calc(100% - 58px - 30px - 100px);}
+#wrap .main .right .right_con .right_list{width:100%;height:100%;padding:5px;}
+#wrap .main .right .right_con .right_list .right_in{width:100%;height:100%;}
 
-/* left - start */
-#wrap .main .left .left_tap{border:1px solid red;}
-#wrap .main .left .left_tap ul{display: flex;flex-wrap: wrap;justify-content: center;}
-#wrap .main .left .left_tap ul li{border:1px solid blue;cursor: pointer;padding:15px 30px;margin:5px 2.5px;}
-#wrap .main .left .left_tap ul li.on{background: #000;color:#fff;}
-
-#wrap .main .left .left_con{border:1px solid red;width:100%;height:calc(100% - 58px);}
-#wrap .main .left .left_con .left_list{border:1px solid blue;width:100%;height:100%;padding:5px;}
-#wrap .main .left .left_con .left_list .list_in{border:1px solid green;width:100%;height:100%;}
-
-#wrap .main .left .left_con .left_list .list_in .list_menu{border:1px solid red;width:100%;height:100%;}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul{border:1px solid yellow;width:100%;height:100%;display: flex;flex-wrap: wrap;}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul li{border:1px solid #b9b9b9;width:30%;margin:1.5%;height:30%;border-radius: 15px;overflow: hidden;cursor: pointer;}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap{width:100%;height:100%;}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .img{width:100%;height:70%;margin-bottom:5%;background:rgba(0,0,0,0.6);}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .text{text-align: center;height:20%;}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .text h2{font-size:18px;font-weight: 600;height:60%;line-height:25px;}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .text p{font-size:14px;height:40%;line-height:16px;}
-
-
-/* left - end */
-
-/* right - start */
-#wrap .main .right .right_tap{border:1px solid red;}
-#wrap .main .right .right_tap ul{display: flex;flex-wrap: wrap;justify-content: center;}
-#wrap .main .right .right_tap ul li{border:1px solid blue;cursor: pointer;padding:15px 30px;margin:5px 2.5px;}
-#wrap .main .right .right_tap ul li.on{background: #000;color:#fff;}
-
-#wrap .main .right .right_con{border:1px solid red;width:100%;height:calc(100% - 58px - 100px);}
-#wrap .main .right .right_con .right_list{border:1px solid blue;width:100%;height:100%;padding:5px;}
-#wrap .main .right .right_con .right_list .right_in{border:1px solid green;width:100%;height:100%;}
-
-#wrap .main .right .right_con .right_list .right_in .cart_list{border:1px solid #545454;margin-bottom:5px;display:flex;flex-wrap:wrap;border-radius:5px;overflow:hidden;}
+#wrap .main .right .right_con .right_list .right_in .cart_list{border:1px solid rgba(0,0,0,.6);margin-bottom:5px;display:flex;flex-wrap:wrap;border-radius:5px;overflow:hidden;}
 #wrap .main .right .right_con .right_list .right_in .cart_list:last-child{margin-bottom:0;}
 #wrap .main .right .right_con .right_list .right_in .cart_list .cart_img{width:50px;height:50px;}
 #wrap .main .right .right_con .right_list .right_in .cart_list .cart_img img{display:block;width:50px;height:50px;}
@@ -88,8 +49,13 @@
 #wrap .main .right .right_con .right_list .right_in .cart_list .cart_btn input{width:20px;height:20px;}
 #wrap .main .right .right_con .right_list .right_in .cart_list .cart_btn span{border:1px solid #fff;width:30px;height:20px;text-align:center;font-size:14px;line-height:20px;}
 
+#wrap .main .right .money{height:30px;line-height:30px;padding:0 30px;border-top:1px solid rgba(0,0,0,.6);border-bottom:1px solid rgba(0,0,0,.6);}
+#wrap .main .right .money .money_in{height:100%;}
+#wrap .main .right .money .money_in h3{font-size:14px;font-weight:bold;float:left;}
+#wrap .main .right .money .money_in p{font-size:14px;font-weight:bold;float:right;}
+
 #wrap .main .right .right_btn{border:1px solid ridge;height:100px;width:100%;}
-#wrap .main .right .right_btn .btn_in{width:100%;height:100%;border:1px solid blue;display: flex;flex-wrap: wrap;justify-items: center;justify-content: center;align-items: center;align-content: center;}
+#wrap .main .right .right_btn .btn_in{width:100%;height:100%;display: flex;flex-wrap: wrap;justify-items: center;justify-content: center;align-items: center;align-content: center;}
 #wrap .main .right .right_btn .btn_in .btn{border:1px solid red;cursor: pointer;overflow: hidden;border-radius: 5px;}
 #wrap .main .right .right_btn .btn_in .btn:first-child{margin-right:5px;}
 #wrap .main .right .right_btn .btn_in .btn:last-child{margin-left:5px;}
