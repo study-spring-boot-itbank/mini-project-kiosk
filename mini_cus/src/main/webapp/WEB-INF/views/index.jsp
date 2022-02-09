@@ -297,7 +297,7 @@
 									
 								<div class="cart_list">
 									<div class="cart_img">
-										<img src="${cart.img}">
+										<img src="img/${cart.img}.jpg">
 									</div>
 									
 									<div class="cart_text">
