@@ -492,8 +492,8 @@ const receiveMessage = async (e) =>
 					<div class="money_in">
 						<h3>합계금액 :</h3>
 						<p>
-							<%-- ${} --%>
-							원
+							
+							${sum}원
 						</p>
 					</div>
 				</div>

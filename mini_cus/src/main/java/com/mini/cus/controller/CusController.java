@@ -41,6 +41,8 @@ public class CusController {
 		model.addAttribute("menuList", mvo);
 		List<CartVO> lcvo = minidao.getAllCart();
 		model.addAttribute("cartList", lcvo);
+		Integer sum = minidao.sumall();
+		model.addAttribute("sum",sum);
 		return "index";
 	}
 	

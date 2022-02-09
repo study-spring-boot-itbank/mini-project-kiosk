@@ -14,4 +14,5 @@ public interface MiniDAO {
 	public List<CartVO> getAllCart();
 	public void delCart(String menu);
 	public void delall();
+	public Integer sumall();
 }

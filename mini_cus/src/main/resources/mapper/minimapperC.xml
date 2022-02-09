@@ -37,4 +37,10 @@
 		delete
 		from cart
 	</delete>
+	
+	<select id="sumall" resultType="integer">
+		select sum(price)
+		from cart
+	</select>
+	
 </mapper>
