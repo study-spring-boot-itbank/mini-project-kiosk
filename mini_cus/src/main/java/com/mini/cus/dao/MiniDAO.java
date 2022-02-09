@@ -12,4 +12,5 @@ public interface MiniDAO {
 	public List<MenuVO> getAllMenu();
 	public int addCart(String menu,String img,String price);
 	public List<CartVO> getAllCart();
+	public void delCart(String menu);
 }

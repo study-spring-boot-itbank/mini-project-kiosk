@@ -93,7 +93,7 @@
 										<div class="list_wrap">
 											<div class="img"></div>
 											<div class="text">
-												<h2 name=menu>${menuList[1].menu }</h2>
+												<h2>${menuList[1].menu }</h2>
 												<p>${menuList[1].price}</p>
 											</div>
 										</div>
@@ -136,6 +136,7 @@
 												<h2>${menuList[5].menu }</h2>
 												<p>${menuList[5].price}</p>
 											</div>
+										</div>
 									</li>
 
 									<li>
@@ -304,11 +305,14 @@
 										<p>${cart.price}</p>
 									</div>
 									
-									<div class="cart_btn">
-										<input type="button" value="-" name="">
+									<form class="cart_btn" method="post">
+										<input readonly type="hidden" value="${cart.menu}"name="menu">
+										<input readonly type="hidden" value="${cart.img}"name="img">
+										<input readonly type="hidden" value="${cart.price}"name="price">
+										<button type="submit" name="" onclick="javascript: form.action='/delCart'">-</button>
 										<span>${cart.count}</span>
-										<input type="button" value="+" name="">
-									</div>
+										<button type="submit" name="" onclick="javascript: form.action='/addCart'">+</button>
+									</form>
 								</div>
 								
 							</c:forEach>

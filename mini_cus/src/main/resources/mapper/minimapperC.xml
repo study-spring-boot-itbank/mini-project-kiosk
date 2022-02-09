@@ -25,4 +25,10 @@
 			from cart
 			GROUP BY menu,img,price
 	</select>
+	<delete id="delCart">
+		delete
+		from cart
+		where menu = #{menu}
+		and rownum =1
+	</delete>
 </mapper>

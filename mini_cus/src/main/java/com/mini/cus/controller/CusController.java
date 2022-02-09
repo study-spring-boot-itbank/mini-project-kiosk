@@ -50,6 +50,13 @@ public class CusController {
 //		model.addAttribute("cartList", lcvo);
 		return "redirect:index";
 	}
+	
+	@RequestMapping(value = "/delCart" , method = RequestMethod.POST)
+	public String delCart(CartVO cvo,Model model) {
+		String menu = cvo.getMenu();
+		minidao.delCart(menu);
+		return "redirect:index";
+	}
 
 	/*
 	 * @RequestMapping("/showCart") public String getC(Model model) {
