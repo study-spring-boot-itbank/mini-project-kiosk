@@ -1,39 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>키오스크</title>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/common.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="fontawesome/css/all.css">
-	<link rel="stylesheet" href="fontawesome/css/fontawesome.css">
-	<link rel="stylesheet" href="fontawesome/css/brands.css">
-	<link rel="stylesheet" href="fontawesome/css/solid.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>키오스크</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="fontawesome/css/all.css">
+<link rel="stylesheet" href="fontawesome/css/fontawesome.css">
+<link rel="stylesheet" href="fontawesome/css/brands.css">
+<link rel="stylesheet" href="fontawesome/css/solid.css">
 
-	<script src="js/jquery-3.6.0.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="fontawesome/js/all.js"></script>
-	<script src="js/index.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/main.js"></script>
+<script src="fontawesome/js/all.js"></script>
+<script src="js/index.js"></script>
 </head>
 <body>
-<div class="login_pop">
+	<div class="login_pop">
 		<div class="login_in">
 			<h2>키오스크</h2>
 			<form action="" method="post">
 				<div class="id line">
-					<span>아이디</span>
-					<input type="text" name="" class="id">
+					<span>아이디</span> <input type="text" name="" class="id">
 				</div>
 
 				<div class="pw line">
-					<span>비밀번호</span>
-					<input type="password" name="" class="pw">
+					<span>비밀번호</span> <input type="password" name="" class="pw">
 				</div>
 
 				<div class="hidden">
@@ -41,8 +39,8 @@
 				</div>
 
 				<div class="btn">
-					<input type="submit" value="로그인">
-					<input type="button" value="취소">
+					<input type="submit" value="로그인"> <input type="button"
+						value="취소">
 				</div>
 
 				<div class="join">
@@ -55,7 +53,7 @@
 		<div class="main">
 
 			<section class="left">
-				
+
 				<div class="left_tap">
 					<ul>
 						<li class="on">메뉴1</li>
@@ -71,20 +69,24 @@
 							<div class="list_menu">
 								<ul>
 									<li id="btn">
-									<form name="s1" action="addCart" method="post">
-										<div class="list_wrap" >
-											<div class="img"><img src="${menuList[0].img}"></div>
-											<div class="text" >
-												<input readonly type="text" value="${menuList[0].menu}" name="menu" class="ippp">
-												<input readonly type="text" value="${menuList[0].img}" name="img" class="ippp">
-												<input readonly type="text" value="${menuList[0].price}" name="price" class="ippp">
-												
-												<h2>${menuList[0].menu}</h2>
-												<p>${menuList[0].price}</p>
-												<input type="submit" value="담기" class="subBtn">
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img">
+													<img src="${menuList[0].img}">
+												</div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[0].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[0].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[0].price}" name="price" class="ippp">
+
+													<h2>${menuList[0].menu}</h2>
+													<p>${menuList[0].price}</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
-									</form>	
+										</form>
 									</li>
 
 									<li>
@@ -96,7 +98,7 @@
 											</div>
 										</div>
 									</li>
-									
+
 									<li>
 										<div class="list_wrap">
 											<div class="img"></div>
@@ -133,7 +135,7 @@
 											<div class="text">
 												<h2>${menuList[5].menu }</h2>
 												<p>${menuList[5].price}</p>
-										</div>
+											</div>
 									</li>
 
 									<li>
@@ -193,7 +195,7 @@
 											</div>
 										</div>
 									</li>
-									
+
 									<li>
 										<div class="list_wrap">
 											<div class="img"></div>
@@ -269,21 +271,17 @@
 					</div>
 
 					<div class="left_list">
-						<div class="list_in">
-							메뉴리스트3
-						</div>
+						<div class="list_in">메뉴리스트3</div>
 					</div>
 
 					<div class="left_list">
-						<div class="list_in">
-							메뉴리스트4
-						</div>
+						<div class="list_in">메뉴리스트4</div>
 					</div>
 				</div>
 			</section>
 
 			<section class="right">
-				
+
 				<div class="right_tap">
 					<ul>
 						<li class="on">장바구니</li>
@@ -294,22 +292,34 @@
 				<div class="right_con">
 					<div class="right_list">
 						<div class="right_in">
-								<c:forEach var="cart" items="${cartList }">
-									${cart.menu }
-									${cart.img }
-									${cart.price }
-									<br>
-								</c:forEach>
+							<c:forEach var="cart" items="${cartList}">
+									
+								<div class="cart_list">
+									<div class="cart_img">
+										<img src="${cart.img}">
+									</div>
+									
+									<div class="cart_text">
+										<h3>${cart.menu}</h3>
+										<p>${cart.price}</p>
+									</div>
+									
+									<div class="cart_btn">
+										<input type="button" value="-" name="">
+										<span><%-- ${ 수량 코드 넣어주세요 } --%></span>
+										<input type="button" value="+" name="">
+									</div>
+								</div>
+								
+							</c:forEach>
 						</div>
 					</div>
 
 					<div class="right_list">
-						<div class="right_in">
-							채팅
-						</div>
+						<div class="right_in">채팅</div>
 					</div>
 				</div>
-					<div class="right_btn">
+				<div class="right_btn">
 					<div class="btn_in">
 						<div class="no_btn btn">
 							<h3>결제취소</h3>
@@ -324,6 +334,6 @@
 
 		</div>
 	</div>
-	
+
 </body>
 </html>
