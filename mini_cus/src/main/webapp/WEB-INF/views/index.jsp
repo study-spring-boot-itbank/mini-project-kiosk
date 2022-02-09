@@ -71,9 +71,7 @@
 									<li id="btn">
 										<form name="s1" action="addCart" method="post">
 											<div class="list_wrap">
-												<div class="img">
-													<img src="${menuList[0].img}">
-												</div>
+												<div class="img" style="background: url(img/${menuList[0].img}.jpg)no-repeat 50% 50%;"></div>
 												<div class="text">
 													<input readonly type="text" value="${menuList[0].menu}"
 														name="menu" class="ippp"> <input readonly

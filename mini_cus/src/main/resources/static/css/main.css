@@ -19,8 +19,7 @@
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li{border:1px solid #b9b9b9;width:30%;margin:1.5%;height:30%;border-radius: 15px;overflow: hidden;cursor: pointer;position: relative;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li form{width:100%;height:100%;display:block;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap{width:100%;height:100%;}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .img{width:100%;height:70%;margin-bottom:5%;background:rgba(0,0,0,0.6);}
-#wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .img img{width:100%;height:100%;display:block;}
+#wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .img{width:100%;height:70%;margin-bottom:5%;background-size: cover;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .text{text-align: center;height:20%;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .text h2{font-size:18px;font-weight: 600;height:60%;line-height:25px;}
 #wrap .main .left .left_con .left_list .list_in .list_menu ul li .list_wrap .text p{font-size:14px;height:40%;line-height:16px;}
