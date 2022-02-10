@@ -8,6 +8,13 @@ uri = "http://java.sun.com/jsp/jstl/core"%>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+*{margin: 0;padding: 0;box-sizing: border-box;}
+.wrap{width:100%;overflow: hidden;padding:30px;text-align: center;}
+.wrap h2{margin-bottom:20px;}
+.wrap p{margin-bottom:5px;}
+.wrap button{float:right;margin-top:20px;}
+</style>
 <script src="http://localhost:8911/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
  function wan(){
@@ -18,13 +25,17 @@ uri = "http://java.sun.com/jsp/jstl/core"%>
 </script>
 <body>
 
-<h3> ${pid}님 </h3>
-<h3> 총 결제 금액 ${sumsum}원의 </h3>
-<h3> 카카오페이 결제가 정상적으로 완료되었습니다. </h3>
- <!-- <form action="feign/wan" method="get">
- 	<input type="submit" value="창못닫음" >
- </form> -->
- <button onclick="wan()">창닫기</button>
+	<div class="wrap">
+		<h2>결제완료</h2>
+		<p>${pid}님</p>
+		<p>총 결제 금액 ${sumsum}원의</p>
+		<p>카카오페이 결제가</p>
+		<p>정상적으로 완료되었습니다.</p>
+		<!-- <form action="feign/wan" method="get">
+			<input type="submit" value="창못닫음" >
+		</form> -->
+		<button onclick="wan()">창닫기</button>
+	</div>
  
 </body>
 </html>
