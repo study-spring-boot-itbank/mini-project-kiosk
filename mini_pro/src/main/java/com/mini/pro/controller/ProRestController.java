@@ -56,6 +56,7 @@ public class ProRestController {
 		PayinfoVO payinfoVO = new PayinfoVO();
 		payinfoVO = gson.fromJson(feignService.kakao(), PayinfoVO.class);
         payinfoVO.setId((String) session.getAttribute("pid"));
+        session.setAttribute("sumsum", payinfoVO.getPrice());
         String redirect_uri=kakaoPay.kakaoPayReady(payinfoVO);
     	response.sendRedirect(redirect_uri);
     }

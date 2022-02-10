@@ -21,6 +21,9 @@ import com.mini.pro.service.SecurityService;
 import com.mini.pro.vo.LoginVO;
 import com.mini.pro.vo.PayinfoVO;
 
+import lombok.extern.java.Log;
+
+@Log
 @Controller
 public class ProController {
 	@Autowired
@@ -88,5 +91,12 @@ public class ProController {
 		model.addAttribute("mol",feignService.kakao());
 		return "ft";
 	}
+	
+	@GetMapping("/kakaoPaySuccess")
+    public void kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model) {
+        log.info("kakaoPaySuccess get............................................");
+        log.info("kakaoPaySuccess pg_token : " + pg_token);
+        
+    }
 	
 }
