@@ -24,7 +24,6 @@
 
 <script type="text/javascript">
 	var initialtab = [ 1, "sc1" ]
-
 	function cascadedstyle(el, cssproperty, csspropertyNS) {
 		if (el.currentStyle)
 			return el.currentStyle[cssproperty]
@@ -33,9 +32,7 @@
 			return elstyle.getPropertyValue(csspropertyNS)
 		}
 	}
-
 	var previoustab = ""
-
 	function expandcontent(cid, aobject) {
 		if (document.getElementById) {
 			highlighttab(aobject)
@@ -50,7 +47,6 @@
 		} else
 			return true
 	}
-
 	function highlighttab(aobject) {
 		if (typeof tabobjlinks == "undefined")
 			collecttablinks()
@@ -61,12 +57,10 @@
 		aobject.style.backgroundColor = document
 				.getElementById("tabcontentcontainer").style.backgroundColor = themecolor
 	}
-
 	function collecttablinks() {
 		var tabobj = document.getElementById("tablist")
 		tabobjlinks = tabobj.getElementsByTagName("A")
 	}
-
 	function detectSourceindex(aobject) {
 		for (i = 0; i < tabobjlinks.length; i++) {
 			if (aobject == tabobjlinks[i]) {
@@ -75,7 +69,6 @@
 			}
 		}
 	}
-
 	function do_onload() {
 		var cookiename = (persisttype == "sitewide") ? "tabcontent"
 				: window.location.pathname
@@ -95,7 +88,6 @@
 		} else
 			expandcontent(initialtab[1], tabobjlinks[initialtab[0] - 1])
 	}
-
 	if (window.addEventListener)
 		window.addEventListener("load", do_onload, false)
 	else if (window.attachEvent)
@@ -106,7 +98,6 @@
 <script type="text/javascript">
 	var enablepersistence = true
 	var persisttype = "local"
-
 	function get_cookie(Name) {
 		var search = Name + "="
 		var returnvalue = "";
@@ -122,7 +113,6 @@
 		}
 		return returnvalue;
 	}
-
 	function savetabstate() {
 		var cookiename = (persisttype == "sitewide") ? "tabcontent"
 				: window.location.pathname
@@ -133,7 +123,6 @@
 	window.onunload = savetabstate
 </script>
 <script type="text/javascript">
-
 const receiveMessage = async (e) =>
 {
   if(e.data.hasOwnProperty('code')){
@@ -146,6 +135,7 @@ const receiveMessage = async (e) =>
 	  location.href="sss/"+a;
   }
 }
+<<<<<<< HEAD
 window.onload=function(){
 	var c = sessionStorage.getItem("code2");
 	if(!c){
@@ -154,26 +144,37 @@ window.onload=function(){
 	document.getElementById("a_id").innerHTML= c + '님 반갑습니다';
 	}
 
+=======
+>>>>>>> branch 'main' of https://github.com/study-spring-boot-itbank/mini-project-kiosk
 	window.addEventListener("message", receiveMessage, false);
-
 	
-
 </script>
 <script type="text/javascript">
 	function paypay() {
+<<<<<<< HEAD
 		<%-- <% String id = (String)session.getAttribute("code2");
 			if (id==null){ %> --%>
 			var b = sessionStorage.getItem("code2");
 		if(b==null)	{
 			window.open('http://localhost:8911/login','','width =300 , height = 300, top = 100, left = 1000, location = no');
 		 } else { 
+=======
+		<% String id = (String)session.getAttribute("code2");
+			if (id==null){ %>
+			window.open('http://localhost:8911/login','','width =350 , height = 350, top = 150, left = 400, location = no')
+		<% }else{ %>
+>>>>>>> branch 'main' of https://github.com/study-spring-boot-itbank/mini-project-kiosk
 			/* 이곳에 결제버튼을 구현 현재는 로그아웃으로 설정*/
 			/* pro 도 feignlcient 가 되어야할듯 id와 장바구니 내역을 모두보냄
 			pro 에서 결제 진행 + cus를 초기화 시키는 값을 return? */
 			//location.href="logout";
 			var a = sessionStorage.getItem("code2");
 			window.open('http://localhost:8911/paypay/'+a,'','width =450 , height = 600, top = 100, left = 400, location = no')
+<<<<<<< HEAD
 			} 
+=======
+		<% } %>
+>>>>>>> branch 'main' of https://github.com/study-spring-boot-itbank/mini-project-kiosk
 	}
 </script>
 <script type="text/javascript">
@@ -183,12 +184,16 @@ window.onload=function(){
 	}
 	
 </script>
+<<<<<<< HEAD
 <script type="text/javascript">
 	function logout() {
 		sessionStorage.removeItem("code2");
 		window.location.reload()
 	}
 </script>
+=======
+
+>>>>>>> branch 'main' of https://github.com/study-spring-boot-itbank/mini-project-kiosk
 <body>
 	<div class="pop_bg"></div>
 	<div class="login_pop">
