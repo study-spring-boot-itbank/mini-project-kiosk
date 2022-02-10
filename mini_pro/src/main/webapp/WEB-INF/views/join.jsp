@@ -9,8 +9,8 @@
 <body>
 <h1>회원가입</h1>
 <form action="joinOK" method="post">
-	id <input type="text" name="joinid" required="required"/>
-	pw <input type="password" name="joinpassword" required="required"/> 
+	id <input type="text" name="joinid" required="required"/><br>
+	pw <input type="password" name="joinpassword" required="required"/><br>
 	<input type="submit" value="회원가입"/>
 </form>
 
