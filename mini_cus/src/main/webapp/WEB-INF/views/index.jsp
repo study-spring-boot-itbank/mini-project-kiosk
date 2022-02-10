@@ -177,9 +177,11 @@ window.onload=function(){
 	}
 </script>
 <script type="text/javascript">
+
 	function delall() {
 		location.href="delall";
 	}
+	
 </script>
 <script type="text/javascript">
 	function logout() {
