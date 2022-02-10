@@ -151,8 +151,10 @@ window.onload=function(){
 	var c = sessionStorage.getItem("code2");
 	if(!c){
 		c = "";
-	}
-	document.getElementById("a_id").innerHTML= c + '님 반갑습니다';
+		document.getElementById("a_id").innerHTML= '로그인을 해주세요';
+		}else{
+		document.getElementById("a_id").innerHTML= c + '님 반갑습니다';
+		}
 	}
 
 
