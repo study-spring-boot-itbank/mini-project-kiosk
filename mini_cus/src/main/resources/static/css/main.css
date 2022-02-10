@@ -63,8 +63,6 @@
 #wrap .main .right .right_btn .btn_in .btn h3{padding:15px 25px;}
 /* right - end */
 
-
-
 /*login - pop - start*/
 .login_pop{position: absolute;left:50%;top:50%;z-index:99;background: #fff;width:350px;height:350px;transform: translate(-50%,-50%);border-radius: 5px;overflow: hidden;box-shadow: 0 0 5px rgba(0,0,0,0.5);display: none;}
 .login_pop .login_in{padding:30px;}

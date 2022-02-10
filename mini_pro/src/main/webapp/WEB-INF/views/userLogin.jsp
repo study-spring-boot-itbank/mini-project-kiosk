@@ -58,7 +58,7 @@ table {
 .login_pop .login_in form{padding-top:20px;}
 .login_pop .login_in form .line{width:100%;margin-bottom:10px;display: flex;}
 .login_pop .login_in form .line span{width:20%;line-height:32px;display: block;}
-.login_pop .login_in form .line input{line-height:26px;width:80%;display: block;outline: none;}
+.login_pop .login_in form .line input{line-height:26px;width:75%;display: block;outline: none;margin-left:5%;}
 .login_pop .login_in form .hidden{display: none;}
 .login_pop .login_in form .btn{overflow: hidden;}
 .login_pop .login_in form .btn input{width:100%;height:44px;}
