@@ -175,6 +175,7 @@ const receiveMessage = async (e) =>
 </script>
 
 <body>
+	<div class="pop_bg"></div>
 	<div class="login_pop">
 		<div class="login_in">
 			<h2>키오스크</h2>
@@ -193,11 +194,11 @@ const receiveMessage = async (e) =>
 
 				<div class="btn">
 					<input type="submit" value="로그인"> <input type="button"
-						value="취소">
+						value="취소" class="login_close">
 				</div>
 
 				<div class="join">
-					<input type="button" value="회원가입">
+					<a href="http://localhost:8911/join"><input type="button" value="회원가입"></a>
 				</div>
 			</form>
 		</div>
@@ -446,7 +447,7 @@ const receiveMessage = async (e) =>
 				<div class="right_tap">
 					<ul>	
 						<% if(session.getAttribute("code2")==null) { %>
-						<li>로그인해주세요</li>
+						<li class="login_btn">로그인해주세요</li>
 						<% }else{ %>
 						<li>${code2}님 반갑습니다</li>
 						<% } %>
