@@ -8,7 +8,7 @@
 #wrap .main .left .left_tap{border-bottom:1px solid rgba(0,0,0,.6);}
 #wrap .main .left .left_tap ul{display: flex;flex-wrap: wrap;justify-content: center;}
 #wrap .main .left .left_tap ul li{border:1px solid rgba(0,0,0,.6);cursor: pointer;margin:10px 5px;border-radius:5px;overflow:hidden;}
-#wrap .main .left .left_tap ul li a{display:block;padding:10px 30px;}
+#wrap .main .left .left_tap ul li a{display:block;padding:10px 30px;font-size:14px;}
 #wrap .main .left .left_tap ul li a:link,#wrap .main .left .left_tap ul li a:visited{color:#000;}
 #wrap .main .left .left_tap ul li a.current{background: lightyellow;}
 
@@ -32,7 +32,7 @@
 /* right - start */
 #wrap .main .right .right_tap{border-bottom:1px solid rgba(0,0,0,.6);}
 #wrap .main .right .right_tap ul{display: flex;flex-wrap: wrap;justify-content: flex-end;}
-#wrap .main .right .right_tap ul li{border:1px solid rgba(0,0,0,.6);cursor: pointer;padding:10px 15px;margin:10px 20px;border-radius:5px;}
+#wrap .main .right .right_tap ul li{border:1px solid rgba(0,0,0,.6);cursor: pointer;padding:10px 15px;margin:10px;border-radius:5px;font-size:14px;}
 
 #wrap .main .right .right_con{width:100%;height:calc(100% - 58px - 30px - 100px);}
 #wrap .main .right .right_con .right_list{width:100%;height:100%;padding:15px;}

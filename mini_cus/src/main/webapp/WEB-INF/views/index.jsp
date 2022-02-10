@@ -553,11 +553,9 @@ const receiveMessage = async (e) =>
 
 				<div class="right_tap">
 					<ul>
-						<li id=r_1 style="display: none"></li>
-					</ul>
-					<ul>
 						<li id="a_id1" onclick="loging()"></li>
 						<li id="a_id2"></li>
+						<li id=r_1 style="display: none"></li>
 					</ul>
 				</div>
 
