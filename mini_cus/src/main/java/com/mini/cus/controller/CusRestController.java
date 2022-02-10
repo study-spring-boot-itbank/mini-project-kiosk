@@ -1,5 +1,8 @@
 package com.mini.cus.controller;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +33,12 @@ public class CusRestController {
 		System.out.println(payinfoVO.getPrice());
 		return payinfoVO;
 	}
+	
+	@GetMapping(value = "/dell")
+	public void dell(HttpServletResponse response) throws IOException {
+		miniDAO.delall();
+		response.sendRedirect("/");
+	}
+	 
+	
 }

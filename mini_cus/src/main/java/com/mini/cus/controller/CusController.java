@@ -1,9 +1,11 @@
 package com.mini.cus.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +81,11 @@ public class CusController {
 		minidao.delall();
 		return "redirect:index";
 	}
+	
+	/*
+	 * @GetMapping(value="/pay/dell") public String dell(HttpServletResponse
+	 * response) throws IOException { minidao.delall(); return "redirect:index"; }
+	 */
 
 	/*
 	 * @RequestMapping("/showCart") public String getC(Model model) {

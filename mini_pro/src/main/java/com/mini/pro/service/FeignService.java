@@ -12,4 +12,7 @@ public interface FeignService {
 	@GetMapping("Kakao")
 	String kakao();
 	
+	@GetMapping("dell")
+	void dell();
+	
 }

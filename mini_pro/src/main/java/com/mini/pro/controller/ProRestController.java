@@ -61,4 +61,9 @@ public class ProRestController {
     	response.sendRedirect(redirect_uri);
     }
 	
+	@GetMapping("/wan")
+	public void wan() {
+		feignService.dell();
+	}
+	
 }
