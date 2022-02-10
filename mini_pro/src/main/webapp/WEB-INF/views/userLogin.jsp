@@ -103,9 +103,9 @@ table {
 				<div class="join">
 					<a href="join"><input type="button" value="회원가입"></a>
 				</div>
-				
+				  
 				<div class="hidden">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 				</div>
 			</form>
 		</div>

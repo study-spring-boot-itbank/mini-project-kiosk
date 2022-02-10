@@ -197,7 +197,7 @@ const receiveMessage = async (e) =>
 				</div>
 
 				<div class="join">
-					<input type="button" onclick="" value="회원가입">
+					<input type="button" value="회원가입">
 				</div>
 			</form>
 		</div>
