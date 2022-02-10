@@ -162,7 +162,9 @@ const receiveMessage = async (e) =>
 			/* 이곳에 결제버튼을 구현 현재는 로그아웃으로 설정*/
 			/* pro 도 feignlcient 가 되어야할듯 id와 장바구니 내역을 모두보냄
 			pro 에서 결제 진행 + cus를 초기화 시키는 값을 return? */
-			location.href="logout";
+			//location.href="logout";
+			var a = sessionStorage.getItem("code2");
+			window.open('http://localhost:8911/paypay/'+a,'','width =300 , height = 300, top = 100, left = 1000, location = no')
 		<% } %>
 	}
 </script>
@@ -508,4 +510,3 @@ const receiveMessage = async (e) =>
 	</div>
 </body>
 </html>
-
