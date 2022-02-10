@@ -24,7 +24,6 @@
 
 <script type="text/javascript">
 	var initialtab = [ 1, "sc1" ]
-
 	function cascadedstyle(el, cssproperty, csspropertyNS) {
 		if (el.currentStyle)
 			return el.currentStyle[cssproperty]
@@ -33,9 +32,7 @@
 			return elstyle.getPropertyValue(csspropertyNS)
 		}
 	}
-
 	var previoustab = ""
-
 	function expandcontent(cid, aobject) {
 		if (document.getElementById) {
 			highlighttab(aobject)
@@ -50,7 +47,6 @@
 		} else
 			return true
 	}
-
 	function highlighttab(aobject) {
 		if (typeof tabobjlinks == "undefined")
 			collecttablinks()
@@ -61,12 +57,10 @@
 		aobject.style.backgroundColor = document
 				.getElementById("tabcontentcontainer").style.backgroundColor = themecolor
 	}
-
 	function collecttablinks() {
 		var tabobj = document.getElementById("tablist")
 		tabobjlinks = tabobj.getElementsByTagName("A")
 	}
-
 	function detectSourceindex(aobject) {
 		for (i = 0; i < tabobjlinks.length; i++) {
 			if (aobject == tabobjlinks[i]) {
@@ -75,7 +69,6 @@
 			}
 		}
 	}
-
 	function do_onload() {
 		var cookiename = (persisttype == "sitewide") ? "tabcontent"
 				: window.location.pathname
@@ -95,7 +88,6 @@
 		} else
 			expandcontent(initialtab[1], tabobjlinks[initialtab[0] - 1])
 	}
-
 	if (window.addEventListener)
 		window.addEventListener("load", do_onload, false)
 	else if (window.attachEvent)
@@ -106,7 +98,6 @@
 <script type="text/javascript">
 	var enablepersistence = true
 	var persisttype = "local"
-
 	function get_cookie(Name) {
 		var search = Name + "="
 		var returnvalue = "";
@@ -122,7 +113,6 @@
 		}
 		return returnvalue;
 	}
-
 	function savetabstate() {
 		var cookiename = (persisttype == "sitewide") ? "tabcontent"
 				: window.location.pathname
@@ -133,7 +123,6 @@
 	window.onunload = savetabstate
 </script>
 <script type="text/javascript">
-
 const receiveMessage = async (e) =>
 {
   if(e.data.hasOwnProperty('code')){
@@ -144,38 +133,24 @@ const receiveMessage = async (e) =>
 	  var a = sessionStorage.getItem("code2");
 	  console.log(e);
 	  location.href="sss/"+a;
-	  
   }
 }
-window.onload=function(){
-	var c = sessionStorage.getItem("code2");
-	if(!c){
-		c = "";
-	}
-	document.getElementById("a_id").innerHTML= c + '님 반갑습니다';
-	}
-
-
 	window.addEventListener("message", receiveMessage, false);
-
 	
-
 </script>
 <script type="text/javascript">
 	function paypay() {
-		<%-- <% String id = (String)session.getAttribute("code2");
-			if (id==null){ %> --%>
-			var b = sessionStorage.getItem("code2");
-		if(b==null)	{
-			window.open('http://localhost:8911/login','','width =300 , height = 300, top = 100, left = 1000, location = no');
-		 } else { 
+		<% String id = (String)session.getAttribute("code2");
+			if (id==null){ %>
+			window.open('http://localhost:8911/login','','width =350 , height = 350, top = 150, left = 400, location = no')
+		<% }else{ %>
 			/* 이곳에 결제버튼을 구현 현재는 로그아웃으로 설정*/
 			/* pro 도 feignlcient 가 되어야할듯 id와 장바구니 내역을 모두보냄
 			pro 에서 결제 진행 + cus를 초기화 시키는 값을 return? */
 			//location.href="logout";
 			var a = sessionStorage.getItem("code2");
-			window.open('http://localhost:8911/paypay/'+a,'','width =300 , height = 300, top = 100, left = 1000, location = no')
-		 } 
+			window.open('http://localhost:8911/paypay/'+a,'','width =450 , height = 600, top = 100, left = 400, location = no')
+		<% } %>
 	}
 </script>
 <script type="text/javascript">
@@ -183,14 +158,9 @@ window.onload=function(){
 		location.href="delall";
 	}
 </script>
-<script type="text/javascript">
-	function logout() {
-		sessionStorage.removeItem("code2");
-		window.location.reload()
-	}
-</script>
 
 <body>
+	<div class="pop_bg"></div>
 	<div class="login_pop">
 		<div class="login_in">
 			<h2>키오스크</h2>
@@ -209,11 +179,11 @@ window.onload=function(){
 
 				<div class="btn">
 					<input type="submit" value="로그인"> <input type="button"
-						value="취소">
+						value="취소" class="login_close">
 				</div>
 
 				<div class="join">
-					<input type="button" onclick="" value="회원가입">
+					<a href="http://localhost:8911/join"><input type="button" value="회원가입"></a>
 				</div>
 			</form>
 		</div>
@@ -459,11 +429,13 @@ window.onload=function(){
 
 			<section class="right">
 
-				<div class="right_tap" onclick="logout()">
-					<ul>
-						<!-- <li>장바구니</li> -->
-						<li id="a_id"></li>
-						<%-- <div id="a_id">${code2}</div> --%>
+				<div class="right_tap">
+					<ul>	
+						<% if(session.getAttribute("code2")==null) { %>
+						<li class="login_btn">로그인해주세요</li>
+						<% }else{ %>
+						<li>${code2}님 반갑습니다</li>
+						<% } %>
 					</ul>
 				</div>
 
@@ -503,10 +475,7 @@ window.onload=function(){
 				<div class="money">
 					<div class="money_in">
 						<h3>합계금액 :</h3>
-						<p>
-							
-							${sum}원
-						</p>
+						<p>${sum}원</p>
 					</div>
 				</div>
 
