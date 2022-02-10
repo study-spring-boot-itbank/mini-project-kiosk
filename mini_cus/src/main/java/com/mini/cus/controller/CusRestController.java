@@ -23,10 +23,10 @@ public class CusRestController {
 	public PayinfoVO Kakao(HttpSession session) {
 		
 		 PayinfoVO payinfoVO = new PayinfoVO(); 
-		 payinfoVO.setId("테스트");
+		 //payinfoVO.setId("테스트");
 		 payinfoVO.setPrice(miniDAO.sumall());
 		 
-		System.out.println(payinfoVO.getId());
+		//System.out.println(payinfoVO.getId());
 		System.out.println(payinfoVO.getPrice());
 		return payinfoVO;
 	}

@@ -49,7 +49,7 @@ public class ProRestController {
 		return mav;
 	}
 	
-	@PostMapping("/kakaoPay")
+	@GetMapping("/kakaoPay")
     public void kakaoPay(HttpServletResponse response,HttpSession session) throws IOException {
         log.info("kakaoPay post............................................");
         Gson gson = new Gson();
