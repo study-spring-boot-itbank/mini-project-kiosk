@@ -149,6 +149,10 @@ const receiveMessage = async (e) =>
 		document.getElementById("a_id2").innerHTML= c + '님 반갑습니다';
 		document.getElementById("a_id1").style.display = "none";
 		document.getElementById("a_id2").style.display = "block";
+		
+		document.getElementById("r_1").style.display = "block";
+		document.getElementById("r_1").setAttribute("onclick","logout()");
+		document.getElementById("r_1").innerHTML = '로그아웃';
 		}
 	}
 	window.addEventListener("message", receiveMessage, false);
@@ -156,7 +160,6 @@ const receiveMessage = async (e) =>
 </script>
 <script type="text/javascript">
 	function paypay() {
-
 		var b = sessionStorage.getItem("code2");
 		if(b==null)	{
 			window.open('http://localhost:8911/login','','width =350 , height = 350, top = 100, left = 1000, location = no');
@@ -167,7 +170,6 @@ const receiveMessage = async (e) =>
 			//location.href="logout";
 			var a = sessionStorage.getItem("code2");
 			window.open('http://localhost:8911/paypay/'+a,'','width =450 , height = 600, top = 100, left = 400, location = no')
-
 		}
 	}
 </script>
@@ -179,7 +181,6 @@ const receiveMessage = async (e) =>
 </script>
 
 <script type="text/javascript">
-
 	function delall() {
 		location.href="delall";
 	}
@@ -189,6 +190,7 @@ const receiveMessage = async (e) =>
 <script type="text/javascript">
 	function logout() {
 		sessionStorage.removeItem("code2");
+		//document.getElementById("r_1").style.display = "none";
 		window.location.reload()
 	}
 </script>
@@ -247,10 +249,12 @@ const receiveMessage = async (e) =>
 												<div class="img"
 													style="background: url(img/${menuList[0].img}.jpg)no-repeat 50% 50%;"></div>
 												<div class="text">
-													<input readonly type="text" value="${menuList[0].menu}" name="menu" class="ippp">
-													<input readonly type="text" value="${menuList[0].img}" name="img" class="ippp">
-													<input readonly type="text" value="${menuList[0].price}" name="price" class="ippp">
-													
+													<input readonly type="text" value="${menuList[0].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[0].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[0].price}" name="price" class="ippp">
+
 													<h2>${menuList[0].menu}</h2>
 													<p>${menuList[0].price}원</p>
 													<input type="submit" value="담기" class="subBtn">
@@ -258,55 +262,100 @@ const receiveMessage = async (e) =>
 											</div>
 										</form>
 									</li>
-
 									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[1].menu }</h2>
-												<p>${menuList[1].price}</p>
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[1].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[1].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[1].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[1].price}" name="price" class="ippp">
+
+													<h2>${menuList[1].menu}</h2>
+													<p>${menuList[1].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
-
 									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[2].menu }</h2>
-												<p>${menuList[2].price}</p>
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[2].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[2].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[2].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[2].price}" name="price" class="ippp">
+
+													<h2>${menuList[2].menu}</h2>
+													<p>${menuList[2].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
-
 									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[3].menu }</h2>
-												<p>${menuList[3].price}</p>
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[0].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[3].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[3].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[3].price}" name="price" class="ippp">
+
+													<h2>${menuList[3].menu}</h2>
+													<p>${menuList[3].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
-
 									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[4].menu }</h2>
-												<p>${menuList[4].price}</p>
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[4].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[4].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[4].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[4].price}" name="price" class="ippp">
+
+													<h2>${menuList[4].menu}</h2>
+													<p>${menuList[4].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
-
 									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[5].menu }</h2>
-												<p>${menuList[5].price}</p>
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[5].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[5].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[5].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[5].price}" name="price" class="ippp">
+
+													<h2>${menuList[5].menu}</h2>
+													<p>${menuList[5].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
 
 									<li>
@@ -358,7 +407,6 @@ const receiveMessage = async (e) =>
 														type="text" value="${menuList[9].img}" name="img"
 														class="ippp"> <input readonly type="text"
 														value="${menuList[9].price}" name="price" class="ippp">
-
 													<h2>${menuList[9].menu}</h2>
 													<p>${menuList[9].price}원</p>
 													<input type="submit" value="담기" class="subBtn">
@@ -366,55 +414,95 @@ const receiveMessage = async (e) =>
 											</div>
 										</form>
 									</li>
-
-									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[10].menu }</h2>
-												<p>${menuList[10].price}</p>
+									<li id="btn">
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[10].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[10].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[10].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[10].price}" name="price" class="ippp">
+													<h2>${menuList[10].menu}</h2>
+													<p>${menuList[10].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
-
-									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[11].menu }</h2>
-												<p>${menuList[11].price}</p>
+									<li id="btn">
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[11].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[11].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[11].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[11].price}" name="price" class="ippp">
+													<h2>${menuList[11].menu}</h2>
+													<p>${menuList[11].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
-
-									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[12].menu }</h2>
-												<p>${menuList[12].price}</p>
+									<li id="btn">
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[12].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[12].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[12].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[12].price}" name="price" class="ippp">
+													<h2>${menuList[12].menu}</h2>
+													<p>${menuList[12].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
-
-									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[13].menu }</h2>
-												<p>${menuList[13].price}</p>
+									<li id="btn">
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[13].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[13].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[13].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[13].price}" name="price" class="ippp">
+													<h2>${menuList[13].menu}</h2>
+													<p>${menuList[13].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
-
-									<li>
-										<div class="list_wrap">
-											<div class="img"></div>
-											<div class="text">
-												<h2>${menuList[14].menu }</h2>
-												<p>${menuList[14].price}</p>
+									<li id="btn">
+										<form name="s1" action="addCart" method="post">
+											<div class="list_wrap">
+												<div class="img"
+													style="background: url(img/${menuList[14].img}.jpg)no-repeat 50% 50%;"></div>
+												<div class="text">
+													<input readonly type="text" value="${menuList[14].menu}"
+														name="menu" class="ippp"> <input readonly
+														type="text" value="${menuList[14].img}" name="img"
+														class="ippp"> <input readonly type="text"
+														value="${menuList[14].price}" name="price" class="ippp">
+													<h2>${menuList[14].menu}</h2>
+													<p>${menuList[14].price}원</p>
+													<input type="submit" value="담기" class="subBtn">
+												</div>
 											</div>
-										</div>
+										</form>
 									</li>
 
 									<li>
@@ -461,9 +549,12 @@ const receiveMessage = async (e) =>
 				</div>
 			</section>
 
-			<section class="right">
+			<section class="right" >
 
 				<div class="right_tap">
+					<ul>
+						<li id=r_1 style="display: none"></li>
+					</ul>
 					<ul>
 						<li id="a_id1" onclick="loging()"></li>
 						<li id="a_id2"></li>
