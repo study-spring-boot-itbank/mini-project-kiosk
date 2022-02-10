@@ -173,7 +173,6 @@ const receiveMessage = async (e) =>
 </script>
 
 <body>
-	<div>이것은 팝업창에서 받아온 로그인한 아이디 ${code2} 이다</div>
 	<div class="login_pop">
 		<div class="login_in">
 			<h2>키오스크</h2>
@@ -226,12 +225,10 @@ const receiveMessage = async (e) =>
 												<div class="img"
 													style="background: url(img/${menuList[0].img}.jpg)no-repeat 50% 50%;"></div>
 												<div class="text">
-													<input readonly type="text" value="${menuList[0].menu}"
-														name="menu" class="ippp"> <input readonly
-														type="text" value="${menuList[0].img}" name="img"
-														class="ippp"> <input readonly type="text"
-														value="${menuList[0].price}" name="price" class="ippp">
-
+													<input readonly type="text" value="${menuList[0].menu}" name="menu" class="ippp">
+													<input readonly type="text" value="${menuList[0].img}" name="img" class="ippp">
+													<input readonly type="text" value="${menuList[0].price}" name="price" class="ippp">
+													
 													<h2>${menuList[0].menu}</h2>
 													<p>${menuList[0].price}원</p>
 													<input type="submit" value="담기" class="subBtn">
@@ -446,8 +443,8 @@ const receiveMessage = async (e) =>
 
 				<div class="right_tap">
 					<ul>
-						<li class="on">장바구니</li>
-						<li>채팅</li>
+						<!-- <li>장바구니</li> -->
+						<li>${code2}님 반갑습니다</li>
 					</ul>
 				</div>
 
@@ -481,10 +478,6 @@ const receiveMessage = async (e) =>
 
 							</c:forEach>
 						</div>
-					</div>
-
-					<div class="right_list">
-						<div class="right_in">채팅</div>
 					</div>
 				</div>
 
